@@ -10,6 +10,12 @@ namespace Dz
         public void StartNetworkAsHost()
         {
             NetworkManager.Singleton.StartHost();
+            StartNewGame();
+        }
+
+        public void StartNewGame()
+        {
+            StartCoroutine(WorldSaveGameManager.instance.LoadNewGame());
         }
     }
 }
